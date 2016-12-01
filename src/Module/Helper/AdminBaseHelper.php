@@ -4,7 +4,6 @@
 
     use Bitrix\Main\Loader;
     use Bitrix\Main\LoaderException;
-
     use Bitrix\Main\ModuleManager;
     use Lacodda\BxFrame\Module\EntityManager;
     use Lacodda\BxFrame\Module\Widget\HelperWidget;
@@ -1156,7 +1155,7 @@
          * на основе передаваемых данных.
          *
          * @param \Lacodda\BxFrame\Module\Widget\HelperWidget $widget
-         * @param array                                $data
+         * @param array                                       $data
          */
         protected function onCreateWidgetForField (&$widget, $data = array ())
         {

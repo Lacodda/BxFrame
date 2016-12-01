@@ -533,7 +533,8 @@
                     /** @var DataManager $className */
                     $className = static::getModel ();
                     // Если имеется primary key, то модель уже существующая, пытаемся найти ее в БД
-                    $existing = $className::getById ($id)->fetch ();
+                    $existing = $className::getById ($id)
+                                          ->fetch ();
                 }
 
                 if ($existing)

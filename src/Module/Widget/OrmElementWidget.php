@@ -3,7 +3,6 @@
     namespace Lacodda\BxFrame\Module\Widget;
 
     use Bitrix\Main\ArgumentTypeException;
-
     use Lacodda\BxFrame\Module\Helper\AdminBaseHelper;
     use Lacodda\BxFrame\Helper\Lang;
 

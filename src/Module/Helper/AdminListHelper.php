@@ -5,6 +5,7 @@
     use Bitrix\Main\Entity\DataManager;
     use Bitrix\Main\DB\Result;
     use Lacodda\BxFrame\Module\EntityManager;
+    use Lacodda\BxFrame\Helper\Lang;
 
     /**
      * Базовый класс для реализации страницы списка админки.

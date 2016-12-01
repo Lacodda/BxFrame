@@ -6,7 +6,6 @@
     use Bitrix\Main\Entity\EntityError;
     use Bitrix\Main\Entity\Result;
     use Bitrix\Highloadblock as HL;
-
     use Lacodda\BxFrame\Module\Helper\AdminEditHelper;
     use Lacodda\BxFrame\Module\Helper\AdminListHelper;
     use Lacodda\BxFrame\Helper\Lang;

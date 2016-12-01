@@ -4,7 +4,6 @@
 
     use Bitrix\Iblock\ElementTable;
     use Bitrix\Main\Loader;
-
     use Lacodda\BxFrame\Helper\Lang;
 
     /**

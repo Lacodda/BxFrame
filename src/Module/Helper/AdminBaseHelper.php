@@ -8,6 +8,7 @@
     use Bitrix\Main\ModuleManager;
     use Lacodda\BxFrame\Module\EntityManager;
     use Lacodda\BxFrame\Module\Widget\HelperWidget;
+    use Lacodda\BxFrame\Helper\Lang;
     use Bitrix\Main\Entity\DataManager;
     use Bitrix\Highloadblock as HL;
     use Bitrix\Main\Context;

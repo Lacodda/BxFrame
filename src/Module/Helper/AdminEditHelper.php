@@ -5,6 +5,7 @@
     use Lacodda\BxFrame\Module\EntityManager;
     use Lacodda\BxFrame\Module\Widget\HelperWidget;
     use Bitrix\Main\Entity\DataManager;
+    use Lacodda\BxFrame\Helper\Lang;
 
     /**
      * Базовый класс для реализации детальной страницы админки.

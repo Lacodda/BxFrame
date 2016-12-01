@@ -1,6 +1,6 @@
 <?php
 
-    namespace Lacodda\BxFrame\Helper\Lang;
+    namespace Lacodda\BxFrame\Module\Helper\Lang;
 
     /**
      * Class AdminBaseHelper

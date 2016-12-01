@@ -71,7 +71,7 @@ Features:
 * Managing caching, modules, search system.
 * Nice API for creating agents.
 
-Made based on Symfony Console ♥.
+Made based on Symfony Console.
 
 ## Installation
 

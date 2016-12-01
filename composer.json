@@ -1,0 +1,48 @@
+{
+    "name"       :"lacodda/bxframe",
+    "description":"API for build modules, components and cli on CMS Bitrix",
+    "keywords"   :[
+        "bitrix",
+        "admin",
+        "module",
+        "component",
+        "application",
+        "api",
+        "console"
+    ],
+    "type"       :"library",
+    "license"    :"MIT",
+    "homepage"   :"https://github.com/Lacodda/bxframe",
+    "support"    :{
+        "issues":"https://github.com/Lacodda/bxframe/issues",
+        "source":"https://github.com/Lacodda/bxframe/"
+    },
+    "authors"    :[
+        {
+            "name" :"Kirill Lahtachev",
+            "email":"lahtachev@gmail.com"
+        }
+    ],
+    "require"    :{
+        "php"               :">=5.4",
+        "symfony/console"   :"*",
+        "symfony/filesystem":"*",
+        "nesbot/carbon"     :"*"
+    },
+    "scripts"    :{
+        "post-package-install":[
+            "Lacodda\\BxFrame\\ScriptHandler::copy"
+        ],
+        "post-package-update" :[
+            "Lacodda\\BxFrame\\ScriptHandler::copy"
+        ]
+    },
+    "autoload"   :{
+        "psr-4":{
+            "Lacodda\\BxFrame\\":"src/"
+        }
+    },
+    "bin"        :[
+        "bin/bxcli"
+    ]
+}

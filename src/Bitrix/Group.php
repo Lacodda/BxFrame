@@ -37,6 +37,8 @@
 
             $group = self::GetByID ($id);
 
+            self::$group = [];
+
             self::$group[$id] = $group->Fetch ();
 
             $instance = new static;

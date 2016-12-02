@@ -42,7 +42,7 @@
 
             $rsElements = ElementTable::getList (['filter' => $filter, 'select' => $select]);
 
-            $element = [];
+            $element = self::$element = [];
 
             while ($arElement = $rsElements->fetch ())
             {

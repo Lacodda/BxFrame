@@ -39,6 +39,8 @@
 
             $user = self::GetByID ($id);
 
+            self::$user = [];
+
             self::$user[$id] = $user->Fetch ();
 
             $instance = new static;

@@ -42,7 +42,7 @@
 
             $rsSections = SectionTable::getList (['filter' => $filter, 'select' => $select]);
 
-            $section = [];
+            $section = self::$section = [];
 
             while ($arSection = $rsSections->fetch ())
             {

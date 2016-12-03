@@ -129,9 +129,66 @@
         {
             array_walk_recursive (
                 $array,
-                function (&$item, &$key)
+                function (&$item, &$key) use (&$from, &$to)
                 {
                     $item = is_string ($item) ? self::convertCharsetStr ($item, $from, $to) : $item;
+                }
+            );
+
+            return $array;
+        }
+
+        /**
+         * @param $str
+         * @param $to
+         *
+         * @return mixed|string
+         */
+        public static function convertCharsetTo ($str, $to)
+        {
+            if (is_array ($str))
+            {
+                return self::convertCharsetArrayTo ($str, $to);
+            } else
+            {
+                return self::convertCharsetStrTo ($str, $to);
+            }
+        }
+
+        /**
+         * @param $str
+         * @param $to
+         *
+         * @return string
+         */
+        private static function convertCharsetStrTo ($str, $to)
+        {
+            $from = strtolower (mb_detect_encoding ($str));
+
+            $to = strtolower ($to);
+
+            if ($from != $to)
+            {
+                return iconv ($from, $to, $str);
+            } else
+            {
+                return $str;
+            }
+        }
+
+        /**
+         * @param $array
+         * @param $to
+         *
+         * @return mixed
+         */
+        private static function convertCharsetArrayTo ($array, $to)
+        {
+            array_walk_recursive (
+                $array,
+                function (&$item, &$key) use (&$to)
+                {
+                    $item = is_string ($item) ? self::convertCharsetStrTo ($item, $to) : $item;
                 }
             );
 
@@ -168,6 +225,9 @@
             if ($from != $to)
             {
                 return iconv ($from, $to, $str);
+            } else
+            {
+                return $str;
             }
         }
 

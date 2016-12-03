@@ -122,6 +122,45 @@
         }
 
         /**
+         * @param        $iblockSectionId
+         * @param string $parent
+         * @param string $active
+         *
+         * @return static
+         */
+        public static function child ($iblockSectionId, $parent = 'Y', $active = 'Y')
+        {
+            $filter = ['IBLOCK_SECTION_ID' => $iblockSectionId];
+            $filter = array_merge ($filter, ['ACTIVE' => $active]);
+            $select = [
+                'ID',
+                'NAME',
+                'DEPTH_LEVEL',
+            ];
+
+            $rsSections = SectionTable::getList (['filter' => $filter, 'select' => $select]);
+
+            $section = [];
+
+            while ($arSection = $rsSections->fetch ())
+            {
+                $section[$arSection['ID']] = $arSection;
+            }
+
+            self::$section = $section;
+
+            if ($parent == 'Y')
+            {
+                self::find ($iblockSectionId);
+                self::$section = array_merge (self::$section, $section);
+            }
+
+            $instance = new static;
+
+            return $instance;
+        }
+
+        /**
          * @return $this
          */
         public function get ()

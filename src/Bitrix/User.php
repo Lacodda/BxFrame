@@ -144,6 +144,33 @@
         }
 
         /**
+         * @param        $department_id
+         * @param string $active
+         *
+         * @return static
+         */
+        public static function whereDepartment ($department_id, $active = 'Y')
+        {
+            $filter = ['UF_DEPARTMENT' => $department_id];
+            $filter = array_merge ($filter, ['ACTIVE' => $active]);
+
+            $rsUsers = self::GetList ($by = ['last_name' => 'asc', 'login' => 'desc'], $order = 'asc', $filter);
+
+            $user = [];
+
+            while ($arUser = $rsUsers->Fetch ())
+            {
+                $user[$arUser['ID']] = $arUser;
+            }
+
+            self::$user = $user;
+
+            $instance = new static;
+
+            return $instance;
+        }
+
+        /**
          * @return $this
          */
         public function get ()

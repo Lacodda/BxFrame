@@ -107,7 +107,7 @@
          *
          * @return static
          */
-        public static function where (array $id = [], $active = 'Y')
+        public static function where ($id = [], $active = 'Y')
         {
             $filter = [];
             $filter = !empty($id) ? array_merge ($filter, ['ID' => implode ('|', $id)]) : $filter;

@@ -120,7 +120,7 @@
          *
          * @return static
          */
-        public static function where (array $groups_id = [], array $id = [], $active = 'Y')
+        public static function where ($groups_id = [], array $id = [], $active = 'Y')
         {
             $filter = [];
             $filter = !empty($groups_id) ? array_merge ($filter, ['GROUPS_ID' => $groups_id]) : $filter;

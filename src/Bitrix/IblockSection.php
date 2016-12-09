@@ -3,7 +3,6 @@
     namespace Lacodda\BxFrame\Bitrix;
 
     use Bitrix\Iblock\SectionTable;
-    use Bitrix\Main\Loader;
     use Lacodda\BxFrame\Helper\Helper;
 
     /**
@@ -93,12 +92,13 @@
          *
          * @return static
          */
-        public static function where ($iblockId, $iblockSectionId = null, $active = 'Y')
+        public static function where ($iblockId, $iblockSectionId = null, $depthLevel = null, $active = 'Y')
         {
             $filter = [];
             $filter = array_merge ($filter, ['IBLOCK_ID' => $iblockId]);
             $filter = array_merge ($filter, ['ACTIVE' => $active]);
             $filter = $iblockSectionId ? array_merge ($filter, ['IBLOCK_SECTION_ID' => $iblockSectionId]) : $filter;
+            $filter = $depthLevel ? array_merge ($filter, ['DEPTH_LEVEL' => $depthLevel]) : $filter;
             $select = [
                 'ID',
                 'NAME',
